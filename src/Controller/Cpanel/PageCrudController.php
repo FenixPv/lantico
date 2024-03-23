@@ -40,4 +40,12 @@ class PageCrudController extends AbstractCrudController
         }
     }
 
+    public function configureCrud(Crud $crud):Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Добавить страницу')
+            ->setEntityLabelInPlural('Страницы сайта')
+            ->setSearchFields(['title', 'slug'])
+            ->setDefaultSort(['createdAt' => 'DESC']);
+    }
 }
