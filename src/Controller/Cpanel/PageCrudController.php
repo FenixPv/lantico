@@ -18,7 +18,6 @@ class PageCrudController extends AbstractCrudController
         return Page::class;
     }
 
-
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('title', 'Title');
@@ -35,8 +34,6 @@ class PageCrudController extends AbstractCrudController
 
         if (Crud::PAGE_EDIT === $pageName) {
             yield $createdAt->setFormTypeOption('disabled', true);
-        } else {
-            yield $createdAt;
         }
     }
 
