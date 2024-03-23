@@ -6,9 +6,11 @@ use App\Repository\PageRepository;
 use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[UniqueEntity(fields: ['title'], message: 'Страница с таким title уже существует')]
+#[UniqueEntity(fields: ['slug'], message: 'Страница с таким slug уже существует')]
 class Page
 {
     #[ORM\Id]
