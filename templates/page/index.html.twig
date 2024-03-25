@@ -19,7 +19,7 @@
     {% for page in pages %}
         <h4>{{ page.title }}</h4>
         <p>
-            <a href="/{{ page.id }}">View</a>
+            <a href="{{ path('show-page', {slug: page.slug}) }}">{{ page }}</a>
         </p>
     {% endfor %}
 </div>

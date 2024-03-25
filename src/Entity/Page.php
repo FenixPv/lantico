@@ -7,6 +7,9 @@ use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\String\Slugger\SluggerInterface;
+
+
 #[ORM\Entity(repositoryClass: PageRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[UniqueEntity(fields: ['title'], message: 'Страница с таким title уже существует')]
@@ -77,6 +80,16 @@ class Page
         $this->slug = $slug;
 
         return $this;
+    }
+
+    /**
+     * @noinspection PhpUnused
+     */
+    public function computeSlug(SluggerInterface $slugger): void
+    {
+        if (!$this->slug || '-' === $this->slug) {
+            $this->slug = (string) $slugger->slug((string) $this)->lower();
+        }
     }
     public function getDescription(): ?string
     {
