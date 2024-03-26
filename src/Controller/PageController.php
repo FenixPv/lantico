@@ -18,13 +18,12 @@ class PageController extends AbstractController
             'pages' => $pageRepository->findAll(),
         ]);
     }
-
     #[Route('/{slug}', name: 'show-page')]
     public function show(
         #[MapEntity(mapping: ['slug' => 'slug'])] Page $page): Response
     {
         return $this->render('/page/show.html.twig', [
-            'slug' => $page->getSlug(),
+//            'slug' => $page->getSlug(),
             'page' => $page,
         ]);
     }
