@@ -3,6 +3,8 @@
 namespace App\Controller\Cpanel;
 
 use App\Entity\Page;
+use App\Entity\Product;
+use App\Entity\ProductCategory;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,5 +41,8 @@ class CpanelController extends AbstractDashboardController
 
         yield MenuItem::linkToCrud('Pages', 'fas fa-map-marker-alt', Page::class);
         yield MenuItem::linkToCrud('Users', 'fas fa-map-marker-alt', User::class);
+
+        yield MenuItem::linkToCrud('Категории', '', ProductCategory::class);
+        yield MenuItem::linkToCrud('Продукты', '', Product::class);
     }
 }
