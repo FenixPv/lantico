@@ -25,3 +25,23 @@ section {
   background-color: #151E1D;
   background-image: url("../../images/page/cover_temper.jpg");
 }
+.section-1909 {
+  background-color: #151E1D;
+  background-image: url("../../images/page/cover_1909.png");
+  background-size: contain;
+}
+.section-passione {
+  background-image: url("../../images/page/passione.png");
+  opacity: 90%;
+  background-size: contain;
+}
+.section-espresso {
+  background-image: url("../../images/page/espresso.png");
+  opacity: 90%;
+  background-size: contain;
+}
+.surface-dark {
+  background: rgba(255, 255, 255, 0.085);
+  backdrop-filter: blur(99px);
+  border-radius: 1rem;
+}
