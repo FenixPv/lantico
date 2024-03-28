@@ -1,3 +1,22 @@
 body {
-    background-color: skyblue;
+    background-color: #151E1D;
+    margin: 0;
 }
+
+.font-family-rubik_dirt {
+    font-family: 'Rubik Dirt', cursive;
+}
+.navbar-brand, .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Rubik Dirt', cursive;
+}
+.nav-item:hover {
+    box-shadow: 0 10px 10px -10px rgba(255, 255, 255, .5);
+}
+/*.dropdown-menu-dark {*/
+/*    background-color: #151E1D;*/
+/*}*/
+/*.dropdown-item:hover {*/
+/*    background-color: #151E1D;*/
+/*    !*box-shadow: 0 10px 10px -10px rgba(255, 255, 255, .5);*!*/
+/*}*/
