@@ -1,22 +1,27 @@
 body {
-    background-color: #151E1D;
-    margin: 0;
+  background-color: #151E1D;
+  margin: 0;
 }
 
 .font-family-rubik_dirt {
-    font-family: 'Rubik Dirt', cursive;
+  font-family: 'Rubik Dirt', cursive;
 }
 .navbar-brand, .nav-link {
-    font-size: 1.2rem;
-    font-family: 'Rubik Dirt', cursive;
+  font-size: 1.2rem;
+  font-family: 'Rubik Dirt', cursive;
 }
 .nav-item:hover {
-    box-shadow: 0 10px 10px -10px rgba(255, 255, 255, .5);
+  box-shadow: 0 10px 10px -10px rgba(255, 255, 255, .5);
 }
-/*.dropdown-menu-dark {*/
-/*    background-color: #151E1D;*/
-/*}*/
-/*.dropdown-item:hover {*/
-/*    background-color: #151E1D;*/
-/*    !*box-shadow: 0 10px 10px -10px rgba(255, 255, 255, .5);*!*/
-/*}*/
+section {
+  height: 100vh;
+  position: relative;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+.section-home {
+  background-color: #151E1D;
+  background-image: url("../../images/page/cover_temper.jpg");
+}
