@@ -6,5 +6,11 @@
 
 {% block body %}
   <h2>{{ page.title }} </h2>
-  {{ page.body | raw }}
+  <div class="container-fluid mt-5">
+    <img src="page/images/{{ page.cover }}" alt="cover" class="w-100 img-fluid ">
+    <div class="container bg-body">
+      {{ page.body | raw }}
+    </div>
+  </div>
+
 {% endblock %}
