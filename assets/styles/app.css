@@ -5,6 +5,9 @@ body {
 .bg-dark {
   background-color: #151E1D !important;
 }
+.dropdown-menu-dark {
+  background-color: #151E1D !important;
+}
 .scroller {
   background-color: #151E1D;
 }
