@@ -54,3 +54,7 @@ section {
   backdrop-filter: blur(99px);
   border-radius: 1rem;
 }
+.site-footer {
+  background-image: url("../../images/page/_cover2.png");
+  opacity: 0.6;
+}
