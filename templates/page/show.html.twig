@@ -7,20 +7,21 @@
 {% block body %}
   {% include ('header.html.twig') %}
 
-  <div class="container-fluid p-0 bg-white">
+  <div class="container-fluid p-0">
     {% if page.cover %}
-    <div class="d-flex justify-content-center align-items-center"
-         style="background-image: url('page/images/{{ page.cover }}'); height: 500px; background-position-y: center">
+        <div class="d-flex justify-content-center align-items-center"
+             style="height: 380px; background-image: url('page/images/{{ page.cover }}');
+                     background-position: center center">
+          <h1 class="text-light display-4 text-uppercase"><strong>{{ page.title }} </strong></h1>
+      </div>
 
-        <div class="h-25" >
-          <h1 class="text-light display-2">{{ page.title }} </h1>
-        </div>
-
-    </div>
     {% endif %}
 
-    <div class="container bg-body mt-3 fs-3">
-      {{ page.body | raw }}
+    <div class="container mt-3 fs-3">
+      <div class="surface p-3">
+        {{ page.body | raw }}
+      </div>
+
     </div>
   </div>
 
