@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class PageCrudController extends AbstractCrudController
 {
@@ -25,7 +26,7 @@ class PageCrudController extends AbstractCrudController
         yield TextareaField::new('description', 'Описание');
         yield ImageField::new('cover', 'Обложка')
             ->setUploadDir('public/page/images');
-        yield TextEditorField::new('Body', 'Тело страницы');
+        yield TextEditorField::new('Body', 'Тело страницы')->setFormType(CKEditorType::class);
 
         $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions(options: [
             'years' => range(date('Y'), end: date(format: 'Y') + 5),
@@ -43,6 +44,7 @@ class PageCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Добавить страницу')
             ->setEntityLabelInPlural('Страницы сайта')
             ->setSearchFields(['title', 'slug'])
-            ->setDefaultSort(['createdAt' => 'DESC']);
+            ->setDefaultSort(['createdAt' => 'DESC'])
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 }
