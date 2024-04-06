@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Leapt\FroalaEditorBundle\Form\Type\FroalaEditorType;
+use Leapt\FroalaEditorBundle\LeaptFroalaEditorBundle;
 
 class PageCrudController extends AbstractCrudController
 {
@@ -26,7 +28,8 @@ class PageCrudController extends AbstractCrudController
         yield TextareaField::new('description', 'Описание');
         yield ImageField::new('cover', 'Обложка')
             ->setUploadDir('public/page/images');
-        yield TextEditorField::new('Body', 'Тело страницы')->setFormType(CKEditorType::class);
+        yield TextareaField::new('Body', 'Тело страницы')
+            ->setFormType(FroalaEditorType::class);
 
         $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions(options: [
             'years' => range(date('Y'), end: date(format: 'Y') + 5),
@@ -45,6 +48,7 @@ class PageCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Страницы сайта')
             ->setSearchFields(['title', 'slug'])
             ->setDefaultSort(['createdAt' => 'DESC'])
-            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+//            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
+            ->addFormTheme('@LeaptFroalaEditor/Form/froala_widget.html.twig');
     }
 }

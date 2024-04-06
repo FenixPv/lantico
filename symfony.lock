@@ -47,6 +47,19 @@
             "config/packages/fos_ckeditor.yaml"
         ]
     },
+    "leapt/froala-editor-bundle": {
+        "version": "1.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.2",
+            "ref": "c2307db860954077e79f27ac1e8afa231e9fce89"
+        },
+        "files": [
+            "config/packages/leapt_froala_editor.yaml",
+            "config/routes/leapt_froala_editor.yaml"
+        ]
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
