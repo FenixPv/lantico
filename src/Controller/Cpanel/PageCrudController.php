@@ -29,7 +29,7 @@ class PageCrudController extends AbstractCrudController
         yield ImageField::new('cover', 'Обложка')
             ->setUploadDir('public/page/images');
         yield TextareaField::new('Body', 'Тело страницы')
-            ->setFormType(FroalaEditorType::class);
+            ->setFormType(CKEditorType::class);
 
         $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions(options: [
             'years' => range(date('Y'), end: date(format: 'Y') + 5),
@@ -48,7 +48,7 @@ class PageCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Страницы сайта')
             ->setSearchFields(['title', 'slug'])
             ->setDefaultSort(['createdAt' => 'DESC'])
-//            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
-            ->addFormTheme('@LeaptFroalaEditor/Form/froala_widget.html.twig');
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+//            ->addFormTheme('@LeaptFroalaEditor/Form/froala_widget.html.twig');
     }
 }
