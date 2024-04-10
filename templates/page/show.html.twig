@@ -5,23 +5,24 @@
 {% endblock %}
 
 {% block body %}
+  <body>
   {% include ('header.html.twig') %}
 
-  <div class="container-lg p-0">
+  <div class="container-lg mt-3 p-0">
     {% if page.cover %}
         <div class="d-flex justify-content-center align-items-center"
              style="height: 380px;
                     background-image: url('page/images/{{ page.cover }}');
                     background-position: center center">
-          <h1 class="text-light display-4 text-uppercase"><strong>{{ page.title }} </strong></h1>
-      </div>
+          <h1 class="text-light display-4 text-uppercase"><strong>{{ page.title }}</strong></h1>
+        </div>
     {% endif %}
 
-    <div class="surface p-3">
+    <div class="surface p-3 mt-3">
       {{ page.body | raw }}
     </div>
   </div>
 
   {% include ('footer.html.twig') %}
-
+  </body>
 {% endblock %}
